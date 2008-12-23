@@ -1,0 +1,32 @@
+/* General styles */
+body {
+  font:100% Tahoma, Verdana, sans-serif;
+  color:#000;
+}
+
+a, a:visited {text-decoration:none; color:#115A73}
+a:hover {text-decoration:underline}
+
+.content {margin: 5em }
+.content h1 {background:#ADADAD; color:#333; padding: 0.5em 1em}
+.add_item {float:right; padding:0.5em}
+.add_item:hover {background:#115A73; color:#fff; text-decoration:none}
+.body {padding:1em}
+
+/* list style */
+ul li {padding-bottom:1em; overflow:hidden}
+ul li h2 {display:inline}
+ul li h2 a:visited {color:#734A11}
+ul li .comment {font-size:90%; color:#777;}
+ul li .description {font-size:70%; color:#333}
+ul li .control {font-size:70%; float:left}
+
+/* form styles */
+form {font-size:85%;overflow:hidden}
+form .field {padding-bottom:1em; overflow:hidden}
+form label {width:250px; float:left}
+input, textarea, select {float:left; display: block; width:350px}
+form .short {width:150px; margin-right:1em}
+form small {font-size:80%; color:#777; display:block; clear:left; margin-left:250px }
+form .control {background:#ddd; width:586px; padding:10px}
+form .control input {width:auto; padding: 0px 5px; margin-top:-1px}
