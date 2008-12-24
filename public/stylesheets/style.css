@@ -7,9 +7,9 @@ body {
 a, a:visited {text-decoration:none; color:#115A73}
 a:hover {text-decoration:underline}
 
-.content {margin: 5em }
+.content {margin: 5em; position:relative }
 .content h1 {background:#ADADAD; color:#333; padding: 0.5em 1em}
-.add_item {float:right; padding:0.5em}
+.add_item {position:absolute; right:0; top:0; padding:0.5em; border-left: 1px solid #d0d0d0}
 .add_item:hover {background:#115A73; color:#fff; text-decoration:none}
 .body {padding:1em}
 
