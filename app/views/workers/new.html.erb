@@ -1,0 +1,36 @@
+<div class="add-form" >
+	<% form_for :worker, :url => { :action => :save_worker } do |form| %>
+		<p>
+			<label for="worker_lastname" >Фамилия:</label>
+			<%= form.text_field :lastname, :size => 40 %>
+		</p>
+		<p>
+			<label for="worker_firstname" >Имя:</label>
+			<%= form.text_field :firstname, :size => 40 %>
+		</p>
+		<p>
+			<label for="worker_secondname" >Отчество:</label>
+			<%= form.text_field :secondname, :size => 40 %>
+		</p>
+		<p>
+			<label for="worker_degree" >Ученая степень:</label>
+			<%= form.select :degree,
+				Worker::DEGREE_TYPES,
+				:prompt => "выберите ученую степень" %>
+		</p>
+		<p>
+			<label for="worker_rank" >Ученое звание:</label>
+			<%= form.select :rank,
+				Worker::RANK_TYPES,
+				:prompt => "выберите ученое звание" %>
+		</p>
+		<p>
+			<label for="worker_faculty" >Факультет:</label>
+			<%= form.select :faculty,
+				Worker::FACULTY_TYPES,
+				:prompt => "выберите факультет" %>
+		</p>
+		<%= submit_tag "Добавить сотрудника", :class => "submit" %>
+	<% end %>
+</div>
+

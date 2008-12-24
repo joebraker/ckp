@@ -1,0 +1,21 @@
+<head>
+	<title>
+		Сотрудники Центра Коллективного Пользования МГУ
+	</title>
+</head>
+<body>
+	<h1>Сотрудники Центра Коллективного Пользования МГУ</h1>
+	<br /> 
+
+	<ul>
+		<% for worker in @all_workers %>
+			<li>
+				<%= link_to h(worker.lastname + " " + worker.firstname + " " + worker.secondname), :controller => 'workers', :action => 'show', :id => worker %>&nbsp;
+			</li>
+		<% end %>
+	</ul>
+	<%= button_to "Добавить сотрудника", :controller => 'workers', :action => 'new' %>
+</body>
+
+
+
