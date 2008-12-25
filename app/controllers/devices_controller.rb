@@ -18,5 +18,7 @@ class DevicesController < ApplicationController
 	def link_to_worker
 		@device = Device.find(params[:id])
 		@device.workers << Worker.first		
+		flash[:notice] => "Прибор успешно добавлен в Ваш список"
+		redirect_to :action => :show
 	end
 end
