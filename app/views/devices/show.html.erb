@@ -1,7 +1,7 @@
 <% @title = @device.title %>
 <p><%= @device.description %></p>
-flash[:notice]
-<p><% for worker in @device.workers %><em><%= worker %></p>
+<%= flash[:notice] %>
+<p><% for worker in @device.workers %><em><%= worker.lastname %></em><% end %></p>
 <% form_for :worker, :url => { :action => :link_to_worker, :id => @device.id } do |form| %>
   <p class="control">
     <%= submit_tag "Добавить" %>

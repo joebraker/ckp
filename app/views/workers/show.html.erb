@@ -1,4 +1,5 @@
-<h1><%= h(@worker.lastname + " " + @worker.firstname + " " + @worker.secondname) %></h1>
-Ученая степень: &nbsp;<%= h(@worker.degree) %><br />
-Ученое звание: &nbsp;<%= h(@worker.rank) %><br />
-Факультет: &nbsp;<%= h(@worker.faculty) %><br />
+<h1><%= @worker.lastname + " " + @worker.firstname + " " + @worker.secondname %></h1>
+Ученая степень: &nbsp;<%= @worker.degree %><br />
+Ученое звание: &nbsp;<%= @worker.rank %><br />
+Факультет: &nbsp;<%= @worker.faculty %><br />
+Приборы: &nbsp;<% for device in @worker.devices %><%= device.title %><% end %><br />
