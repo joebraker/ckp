@@ -28,7 +28,7 @@ form label {width:250px; float:left}
 input, textarea, select {float:left; display: block; width:400px}
 form .short {width:150px; margin-right:11px}
 form small {font-size:80%; color:#777; display:block; clear:left; margin-left:250px }
-form .control {background:#ddd; width:586px; padding:10px}
+form .control {background:#ddd; width:636px; padding:10px}
 form .control input {width:auto; padding: 0px 5px; margin-top:-1px}
 
 /* profile style */
