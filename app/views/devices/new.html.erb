@@ -1,0 +1,38 @@
+<% @title = 'Добавление нового оборудования' %>
+<% form_for :device, :url => { :action => :save_device } do |form| %>
+  <p class="field">
+    <label for="device_type">Тип прибора</label>
+    <%= form.text_field :type %>
+  </p>
+  <p class="field">
+    <label for="device_name">Название прибора</label>
+    <%= form.text_field :name %>
+  </p>
+  <p class="field">
+    <label for="device_vendor">Фирма-изготовитель</label>
+    <%= form.text_field :vendor %>
+  </p>
+  <p class="field">
+    <label for="device_country">Страна-изготовитель</label>
+    <%= form.text_field :country %>
+  </p>
+  <p class="field">
+    <label for="device_year">Год выпуска</label>
+    <%= form.text_field :year %>
+  </p>
+  <p class="field">
+    <label for="device_description" >Описание</label>
+    <%= form.text_area :description %>
+  </p>
+  <p class="field">
+    <label for="device_workers" >Персонал</label>
+    <%# for worker in workers %>
+      worker.name
+    <%# end %>
+  </p>
+  <p class="control">
+    <%= submit_tag "Сохранить" %>
+    &nbsp;или
+    <a href="/workers">вернуться</a>
+  </p>
+<% end %>
