@@ -1,5 +1,6 @@
 class WorkersController < ApplicationController
   def index
+		@all_workers = Worker.find(:all)
   end
 
   def show
@@ -10,13 +11,11 @@ class WorkersController < ApplicationController
 	def save_worker
 		@worker = Worker.new(params[:worker])
 		@worker.save
+		redirect_to :action => :index
 	end 
 
   def new
 
   end
 
-	def list_workers
-		@all_workers = Worker.find(:all)
-	end
 end
