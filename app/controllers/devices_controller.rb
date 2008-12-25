@@ -1,4 +1,6 @@
 class DevicesController < ApplicationController
+   layout 'workers'
+
   def index
 		@devices = Device.find(:all)
   end
