@@ -15,4 +15,7 @@ class DevicesController < ApplicationController
 		redirect_to :action => :index
 	end 
 
+	def new
+
+	end
 end
