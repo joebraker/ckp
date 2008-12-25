@@ -1,36 +1,57 @@
-<div class="add-form" >
-	<% form_for :worker, :url => { :action => :save_worker } do |form| %>
-		<p>
-			<label for="worker_lastname" >Фамилия:</label>
-			<%= form.text_field :lastname, :size => 40 %>
-		</p>
-		<p>
-			<label for="worker_firstname" >Имя:</label>
-			<%= form.text_field :firstname, :size => 40 %>
-		</p>
-		<p>
-			<label for="worker_secondname" >Отчество:</label>
-			<%= form.text_field :secondname, :size => 40 %>
-		</p>
-		<p>
-			<label for="worker_degree" >Ученая степень:</label>
-			<%= form.select :degree,
-				Worker::DEGREE_TYPES,
-				:prompt => "выберите ученую степень" %>
-		</p>
-		<p>
-			<label for="worker_rank" >Ученое звание:</label>
-			<%= form.select :rank,
-				Worker::RANK_TYPES,
-				:prompt => "выберите ученое звание" %>
-		</p>
-		<p>
-			<label for="worker_faculty" >Факультет:</label>
-			<%= form.select :faculty,
-				Worker::FACULTY_TYPES,
-				:prompt => "выберите факультет" %>
-		</p>
-		<%= submit_tag "Добавить сотрудника", :class => "submit" %>
-	<% end %>
-</div>
-
+<% @title = 'Добавление нового сотрудника' %>
+<% form_for :worker, :url => { :action => :save_worker } do |form| %>
+  <p class="field">
+    <label for="worker_lastname">Фамилия</label>
+    <%= form.text_field :lastname %>
+  </p>
+  <p class="field">
+    <label for="worker_firstname">Имя</label>
+    <%= form.text_field :firstname %>
+  </p>
+  <p class="field">
+    <label for="worker_secondname">Отчество</label>
+    <%= form.text_field :secondname %>
+  </p>
+  <p class="field">
+    <label for="worker_degree">Ученая степень</label>
+    <%= form.select :degree, Worker::DEGREE_TYPES, {}, :class => 'short' %>
+    <select class="short" id="worker_science">
+      <option>физико-математических наук</option>
+      <option>философских наук</option>
+    </select>
+  </p>
+  <p class="field">
+    <label for="worker_rank">Ученое звание:</label>
+    <%= form.select :rank, Worker::RANK_TYPES, {}, :class => 'short' %>
+  </p>
+  <p class="field">
+    <label for="worker_faculty" >Факультет:</label>
+    <%= form.select :faculty, Worker::FACULTY_TYPES, :prompt => "" %>
+  </p>
+  <p class="field">
+    <label>Научные интересы</label>
+    <input type="text">
+    <small>Используйте запятую в качестве разделителя</small>
+  </p>
+  <p class="field">
+    <label>Электронная почта</label>
+    <input type="text" class="short">
+  </p>
+  <p class="field">
+    <label>Телефон</label>
+    <input type="text" class="short">
+  </p>
+  <p class="field">
+    <label>Приборы</label>
+    <textarea rows="5">20</textarea>
+  </p>
+  <p class="field">
+    <label>Публикации</label>
+    <textarea rows="5"></textarea>
+  </p>
+  <p class="control">
+    <%= submit_tag "Сохранить" %>
+    &nbsp;или
+    <a href="/workers">вернуться</a>
+  </p>
+<% end %>
