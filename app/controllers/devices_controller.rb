@@ -15,7 +15,8 @@ class DevicesController < ApplicationController
 		redirect_to :action => :index
 	end 
 
-	def new
-
+	def link_to_worker
+		@device = Device.find(params[:id])
+		@device.workers << Worker.first		
 	end
 end
