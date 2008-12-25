@@ -1,6 +1,6 @@
 class WorkersController < ApplicationController
   def index
-		@all_workers = Worker.find(:all)
+		@workers = Worker.find(:all)
   end
 
   def show

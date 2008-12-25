@@ -1,21 +1,15 @@
-<head>
-	<title>
-		Сотрудники Центра Коллективного Пользования МГУ
-	</title>
-</head>
-<body>
-	<h1>Сотрудники Центра Коллективного Пользования МГУ</h1>
-	<br /> 
-
-	<ul>
-		<% for worker in @all_workers %>
-			<li>
-				<%= link_to h(worker.lastname + " " + worker.firstname + " " + worker.secondname), :controller => 'workers', :action => 'show', :id => worker %>&nbsp;
-			</li>
-		<% end %>
-	</ul>
-	<%= button_to "Добавить сотрудника", :controller => 'workers', :action => 'new' %>
-</body>
-
-
-
+<% @title = 'Сотрудники Центра Коллективного Пользования МГУ'%>
+<a href="/workers_new" class="add_item">Добавить сотрудника</a>
+<ul class="workers list">
+	<% for worker in @workers %>
+	  <li>
+      <h2><%= link_to h(worker.lastname + " " + worker.firstname + " " + worker.secondname),
+        :controller => 'workers',
+        :action => 'show',
+        :id => worker %></h2>
+      <span class="comment">(<%= short(worker.degree.to_s) %>)</span>
+      <p class="description"><%= humanize(worker.faculty) %></p>
+      <a href="#" class="control">редактировать</a>
+		</li>
+	<% end %>
+</ul>
