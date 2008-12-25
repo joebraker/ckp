@@ -1,6 +1,6 @@
 <% @title = 'Оборудование' %>
 <% for device in @devices %>
-  <p><%= device.name %></p>
+  <p><a href="/devices/show/<%= device.id %>"><%= device.title %></a></p>
   <p><%= device.type %></p>
   <p><%= device.description %></p>
 <% end %>
