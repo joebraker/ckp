@@ -1,28 +1,15 @@
-<%= @title = 'Сотрудники Центра Коллективного Пользования МГУ'%>
+<% @title = 'Сотрудники Центра Коллективного Пользования МГУ'%>
 <a href="/workers_new" class="add_item">Добавить сотрудника</a>
 <ul class="workers list">
-  <li>
-    <h2><a href="kashkarov">П.К.Кашкаров</a></h2>
-    <span class="comment">(д-р физ.-мат. наук)</span>
-    <p class="description">физический факультет</p>
-    <a href="#" class="control">редактировать</a>
-  </li>
-  <li>
-    <h2><a href="">П.А.Форш</a></h2>
-    <span class="comment">(канд. физ.-мат. наук)</span>
-    <p class="description">физический факультет</p>
-    <a href="#" class="control">редактировать</a>
-  </li>
-  <li>
-    <h2><a href="">В.И.Штепа</a></h2>
-    <span class="comment">(ст. науч. сотр.)</span>
-    <p class="description">биологический факультет</p>
-    <a href="#" class="control">редактировать</a>
-  </li>
-  <li>
-    <h2><a href="">П.К.Кашкаров</a></h2>
-    <span class="comment">(д-р физ.-мат. наук)</span>
-    <p class="description">химический факультет</p>
-    <a href="#" class="control">редактировать</a>
-  </li>
+	<% for worker in @workers %>
+	  <li>
+      <h2><%= link_to h(worker.lastname + " " + worker.firstname + " " + worker.secondname),
+        :controller => 'workers',
+        :action => 'show',
+        :id => worker %></h2>
+      <span class="comment">(<%= short(worker.degree.to_s) %>)</span>
+      <p class="description"><%= humanize(worker.faculty) %></p>
+      <a href="#" class="control">редактировать</a>
+		</li>
+	<% end %>
 </ul>
