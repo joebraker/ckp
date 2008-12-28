@@ -1,0 +1,13 @@
+<% tabs = [
+  {:title => "О центре", :urls => %w(/about)},
+  {:title => "Сотрудники", :urls => %w(/workers)},
+  {:title => "Оборудование", :urls => %w(/devices)},
+  {:title => "Контакты", :urls => %w(/contacts)},
+] %>
+
+<ul class="navigation">
+  <% for tab in tabs %>
+    <% is_current_section = current_section?(tab[:urls]) %>
+    <li <%= 'class="active"' if is_current_section %>><%= link_to(tab[:title], tab[:urls].first) %></li>
+  <% end %>
+</ul>

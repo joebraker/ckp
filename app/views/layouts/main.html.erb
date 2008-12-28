@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+  <head>
+    <title>Сотрудники Центра Коллективного Пользования (ЦКП)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link type="text/css" rel="stylesheet" media="all" href="/stylesheets/reset.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="/stylesheets/style.css" />
+    <!--[if IE]>
+      <link type="text/css" rel="stylesheet" media="all" href="/stylesheets/ie.css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper" id="#">
+
+      <div class="header">
+        <h1>Центр Коллективного Пользования</h1>
+        <h2>МГУ им. М.В.Ломоносова</h2>
+
+        <div class="login">
+          <form>
+            <p class="field"><label>e-mail:</label><input type="text"></p>
+            <p class="field"><label>пароль:</label><input type="password"></p>
+            <input type="submit" value="Войти &rarr;">
+          </form>
+          <a href="#">Регистрация</a>&nbsp;|&nbsp;
+        </div>
+
+        <%= render :partial => 'layouts/partials/navigation' %>
+
+      </div>
+
+      <div class="content">
+        <h1><%= @title %></h1>
+        <div class="body">
+          <%= yield %>
+        </div>
+      </div>
+
+      <div class="push"></div>
+    </div>
+
+    <div class="footer">
+      <ul class="navigation">
+        <p>ЦКП</p>
+        <li><a href="#">О центре</a></li>
+        <li><a href="/workers">Сотрудники</a></li>
+        <li><a href="/devices">Оборудование</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <a href="#" class="up">&uarr; Наверх</a>
+    </div>
+
+  <body>
+</html>
+
+

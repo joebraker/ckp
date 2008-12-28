@@ -1,4 +1,6 @@
 class WorkersController < ApplicationController
+  layout 'main'
+
   def index
 		@workers = Worker.find(:all)
   end

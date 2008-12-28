@@ -1,35 +1,62 @@
 /* General styles */
 body {
-  font:100% Tahoma, Verdana, sans-serif;
+  font:100% /*helvetica,*/ tahoma, verdana, sans-serif;
   color:#000;
 }
 
 a, a:visited {text-decoration:none; color:#115A73}
 a:hover {text-decoration:underline}
 
-.content {margin: 5em; position:relative; min-width:600px}
+/* Header */
+.wrapper {margin:0 35px; min-width:640px}
+.header {position:relative; padding-top:25px}
+.header h1 {color:#adadad; font-style:italic; font-size:150%; width:1px; margin-bottom:0.25em}
+.header h2 {color:#adadad; font-style:italic; font-size:75%}
+.header .login {position:absolute; top:25px; right:0; overflow:hidden; font-size:70%; color:#777}
+.header .login form {float:right}
+.header .login form .field {display:inline}
+.header .login form .field input {width:10em; margin:0 0.5em; color:#333}
+.header .navigation {overflow:hidden; border-bottom:1px solid #c0c0c0; float:right; margin-top: -25px;}
+.header .navigation li {float:left; font:110% helvetica, tahoma, verdana, sans-serif;}
+.header .navigation li a {display:block; padding:0 0.5em; border-bottom:0.3em solid white}
+.header .navigation li.active a {border-color:#c0c0c0}
+.header .navigation li a:hover {text-decoration:none; border-color:#115A73}
+
+/* Content */
+.content {position:relative; margin-top:25px}
 .content h1 {background:#ADADAD; color:#333; padding: 0.5em 15em 0.5em 1em}
 .add_item {position:absolute; right:0; top:0; padding:0.5em; border-left: 1px solid #d0d0d0}
 .add_item:hover {background:#115A73; color:#fff; text-decoration:none}
 .body {padding:1em}
 
+/* Footer */
+html, body {height:100%;}
+.wrapper {min-height:100%; height:auto !important; height:100%; margin-bottom:-2em;}
+.push {height:2em}
+.footer {height:2em; font-family:helvetica, tahoma, verdana, sans-serif; background:#ADADAD; margin:0 35px;}
+.footer p, .footer li, .footer .up {font-size:80%; padding:0.6em 0.2em; float:left;}
+.footer a, .footer p, .footer li {color:#fff}
+.footer .up {display:block; float:left; padding-left:1em;}
+.footer .navigation {overflow:hidden; float:right; margin-right:0.8em}
+.footer .navigation li:before {content:"| "}
+
 /* list style */
 ul.list li {padding-bottom:1em; overflow:hidden}
 ul.list li h2 {display:inline}
 ul.list li h2 a:visited {color:#734A11}
-ul.list li .comment {font-size:90%; color:#777;}
+ul.list li .comment {font-size:90%; color:#777}
 ul.list li .description {font-size:70%; color:#333}
 ul.list li .control {font-size:70%; float:left}
 
 /* form styles */
-form {font-size:85%;overflow:hidden}
-form .field {padding-bottom:1em; overflow:hidden}
-form label {width:250px; float:left}
-input, textarea, select {float:left; display: block; width:400px}
-form .short {width:150px; margin-right:11px}
-form small {font-size:80%; color:#777; display:block; clear:left; margin-left:250px }
-form .control {background:#ddd; width:636px; padding:10px; overflow:hidden}
-form .control input {width:auto; padding: 0px 5px; margin-top:-1px}
+.content form {font-size:85%;overflow:hidden}
+.content form .field {padding-bottom:1em; overflow:hidden}
+.content form label {width:250px; float:left}
+.content input, textarea, select {float:left; display: block; width:400px}
+.content form .short {width:150px; margin-right:11px}
+.content form small {font-size:80%; color:#777; display:block; clear:left; margin-left:250px }
+.content form .control {background:#ddd; width:636px; padding:10px; overflow:hidden}
+.content form .control input {width:auto; padding: 0px 5px; margin-top:-1px}
 
 /* profile style */
 .profile {overflow:hidden}

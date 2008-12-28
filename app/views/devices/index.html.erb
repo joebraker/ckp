@@ -1,4 +1,5 @@
 <% @title = 'Оборудование' %>
+<a href="/devices/new" class="add_item">Добавить прибор</a>
 <% for device in @devices %>
   <p><a href="/devices/show/<%= device.id %>"><%= device.title %></a></p>
   <p><%= device.type %></p>
