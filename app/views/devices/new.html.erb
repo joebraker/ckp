@@ -5,8 +5,8 @@
     <%= form.text_field :device_type %>
   </p>
   <p class="field">
-    <label for="device_name">Название прибора</label>
-    <%= form.text_field :name %>
+    <label for="device_title">Название прибора</label>
+    <%= form.text_field :title %>
   </p>
   <p class="field">
     <label for="device_vendor">Фирма-изготовитель</label>
@@ -26,9 +26,6 @@
   </p>
   <p class="field">
     <label for="device_workers" >Персонал</label>
-    <%# for worker in workers %>
-      worker.name
-    <%# end %>
   </p>
   <p class="control">
     <%= submit_tag "Сохранить" %>

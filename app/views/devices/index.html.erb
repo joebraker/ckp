@@ -1,7 +1,9 @@
 <% @title = 'Оборудование' %>
-<a href="/devices/new" class="add_item">Добавить прибор</a>
+<% if Worker.find_by_id(session[:worker_id]) %>
+	<a href="/devices/new" class="add_item">Добавить прибор</a>
+<% end %>
 <% for device in @devices %>
   <p><a href="/devices/show/<%= device.id %>"><%= device.title %></a></p>
-  <p><%= device.type %></p>
+  <p><%= device.device_type %></p>
   <p><%= device.description %></p>
 <% end %>

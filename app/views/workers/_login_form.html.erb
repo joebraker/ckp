@@ -1,0 +1,14 @@
+<% if Worker.find_by_id(session[:worker_id]) %>
+	Вы зашли как&nbsp;
+	<%= link_to "#{Worker.find_by_id(session[:worker_id]).lastname}", { :controller => 'workers', :action => 'show', :id => session[:worker_id]} %>
+	<%= button_to "Выход", { :controller => 'workers', :action => 'logout' } %>
+	<% "Mark 1: Криво конечно, но как сделать по-другому не знаю." %>
+<% else %>
+	<% form_for :worker, :url => { :controller => :workers, :action => :login } do |form| %>
+		<p class="field"><label>e-mail:</label><%= form.text_field :email %></p>
+		<p class="field"><label>пароль:</label><%= form.password_field :password %></p>
+		<%= submit_tag "Войти &rarr;", :class => "submit" %>
+	<% end %>
+	<a href="/workers/new">Регистрация</a>&nbsp;|&nbsp;
+<% end %>
+

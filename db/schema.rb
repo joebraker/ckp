@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081225171627) do
+ActiveRecord::Schema.define(:version => 20081229182026) do
 
   create_table "devices", :force => true do |t|
     t.string   "device_type"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20081225171627) do
 
   add_index "devices_workers", ["device_id", "worker_id"], :name => "index_devices_workers_on_device_id_and_worker_id"
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "workers", :force => true do |t|
     t.string "lastname"
     t.string "firstname"
@@ -38,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20081225171627) do
     t.string "faculty"
     t.string "email"
     t.string "phone"
+    t.string "hashed_password"
+    t.string "salt"
   end
 
 end

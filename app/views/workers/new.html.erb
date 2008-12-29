@@ -1,6 +1,18 @@
 <% @title = 'Добавление нового сотрудника' %>
 <% form_for :worker, :url => { :action => :save_worker } do |form| %>
   <p class="field">
+    <label for="worker_email">Электронный адрес</label>
+    <%= form.text_field :email %>
+  </p>
+  <p class="field">
+    <label for="worker_password">Пароль</label>
+    <%= form.password_field :password %>
+  </p>
+  <p class="field">
+    <label for="worker_password_confirmation">Еще раз</label>
+    <%= form.password_field :password_confirmation %>
+  </p>
+  <p class="field">
     <label for="worker_lastname">Фамилия</label>
     <%= form.text_field :lastname %>
   </p>
@@ -34,23 +46,11 @@
     <small>Используйте запятую в качестве разделителя</small>
   </p>
   <p class="field">
-    <label>Электронная почта</label>
-    <input type="text" class="short">
-  </p>
-  <p class="field">
     <label>Телефон</label>
     <input type="text" class="short">
   </p>
-  <p class="field">
-    <label>Приборы</label>
-    <textarea rows="5">20</textarea>
-  </p>
-  <p class="field">
-    <label>Публикации</label>
-    <textarea rows="5"></textarea>
-  </p>
   <p class="control">
-    <%= submit_tag "Сохранить" %>
+    <%= submit_tag "Зарегистрироваться" %>
     &nbsp;или
     <a href="/workers">вернуться</a>
   </p>
